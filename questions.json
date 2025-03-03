@@ -1,0 +1,1800 @@
+{
+    "categories": [
+        {
+            "id": "openai",
+            "title": "OpenAI",
+            "areas": [
+                {
+                    "areaTitle": "1. Variablen und Datentypen (10 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Was ist eine Variable in C und wie wird sie deklariert?",
+                            "answer": "Eine Variable in C ist ein benannter Speicherbereich, der einen Wert speichert. Sie wird deklariert, indem zuerst der Datentyp und dann der Variablenname angegeben wird, z. B. int number;"
+                        },
+                        {
+                            "question": "Welche grundlegenden Datentypen gibt es in C?",
+                            "answer": "Zu den grundlegenden Datentypen in C zählen int (Ganzzahlen), char (Zeichen), float (Gleitkommazahlen) und double (Gleitkommazahlen mit höherer Genauigkeit)."
+                        },
+                        {
+                            "question": "Erklären Sie den Unterschied zwischen signed und unsigned Variablen.",
+                            "answer": "Signed Variablen können negative und positive Werte speichern, während unsigned Variablen nur nicht-negative Werte speichern."
+                        },
+                        {
+                            "question": "Wie werden Konstanten in C definiert?",
+                            "answer": "Mit dem Schlüsselwort const oder dem Präprozessorbefehl #define."
+                        },
+                        {
+                            "question": "Wie hängt der Speicherverbrauch mit den Datentypen zusammen?",
+                            "answer": "Jeder Datentyp benötigt eine bestimmte Menge an Speicher, z. B. benötigt int häufig 4 Bytes."
+                        },
+                        {
+                            "question": "Was ist eine Typumwandlung (Type Casting) in C?",
+                            "answer": "Eine explizite oder implizite Umwandlung eines Datentyps in einen anderen."
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen float und double?",
+                            "answer": "Double bietet eine höhere Genauigkeit als float und verwendet in der Regel doppelt so viel Speicher."
+                        },
+                        {
+                            "question": "Was ist der Zweck von Enumerationen (enum) in C?",
+                            "answer": "Enum erlaubt die Definition von benannten Konstanten für Ganzzahlen."
+                        },
+                        {
+                            "question": "Was sind Zeichenketten in C und wie werden sie gespeichert?",
+                            "answer": "Zeichenketten sind Arrays von char, die mit einem Nullterminator \\0 enden."
+                        },
+                        {
+                            "question": "Wie kann man eine Ganzzahl in eine Zeichenkette umwandeln?",
+                            "answer": "Mit der Funktion sprintf oder itoa."
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "2. main() (10 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Wie deklariert man eine main-Funktion ohne Parameter?",
+                            "answer": "int main(void) { ... }"
+                        },
+                        {
+                            "question": "Was bedeutet der Rückgabewert von main()?",
+                            "answer": "Er signalisiert dem Betriebssystem, ob das Programm erfolgreich beendet wurde (0 für Erfolg, andere Werte für Fehler)."
+                        },
+                        {
+                            "question": "Welche beiden Varianten der main()-Funktion sind üblich?",
+                            "answer": "int main(void) und int main(int argc, char *argv[])."
+                        },
+                        {
+                            "question": "Was bedeutet argc und argv in main()?",
+                            "answer": "argc gibt die Anzahl der Kommandozeilenargumente an, argv ist ein Array von Strings mit diesen Argumenten."
+                        },
+                        {
+                            "question": "Warum ist es wichtig, dass main() int zurückgibt?",
+                            "answer": "Damit das Betriebssystem den Exit-Status des Programms auswerten kann."
+                        },
+                        {
+                            "question": "Was passiert, wenn main() als void main() deklariert wird?",
+                            "answer": "Es ist nicht standardkonform und kann unerwartetes Verhalten verursachen."
+                        },
+                        {
+                            "question": "Was ist der Standardwert von argc, wenn keine Argumente übergeben werden?",
+                            "answer": "argc hat dann den Wert 1, da der Programmname immer als erstes Argument enthalten ist."
+                        },
+                        {
+                            "question": "Kann man main() in einer anderen Funktion aufrufen?",
+                            "answer": "Ja, technisch ist es möglich, aber es ist unüblich und kann zu unerwartetem Verhalten führen."
+                        },
+                        {
+                            "question": "Welche Bibliothek ist für die Standard-I/O-Funktionen erforderlich?",
+                            "answer": "#include <stdio.h>"
+                        },
+                        {
+                            "question": "Welche Header-Datei ist für die Speicherverwaltung notwendig?",
+                            "answer": "#include <stdlib.h>"
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "3. Ein- und Ausgaben / Formatbezeichner (10 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Welche Standardfunktionen verwendet man in C für Ein- und Ausgaben?",
+                            "answer": "printf() für Ausgabe, scanf() für Eingabe."
+                        },
+                        {
+                            "question": "Was sind Formatbezeichner in printf() und scanf()? Nennen Sie Beispiele für int, float und char.",
+                            "answer": "%d (int), %f (float), %c (char)."
+                        },
+                        {
+                            "question": "Erklären Sie den Unterschied zwischen printf() und scanf().",
+                            "answer": "printf() gibt formatiert aus, scanf() liest formatiert ein. Bei scanf() müssen Adressen (&) der Variablen übergeben werden."
+                        },
+                        {
+                            "question": "Schreiben Sie einen Codeausschnitt, der eine Ganzzahl einliest und formatiert ausgibt.",
+                            "answer": "int num;\nprintf(\"Enter a number: \");\nscanf(\"%d\", &num);\nprintf(\"You entered: %d\", num);"
+                        },
+                        {
+                            "question": "Was bewirkt der Formatbezeichner \"\\n\" in einem Formatstring?",
+                            "answer": "Er erzeugt einen Zeilenumbruch in der Ausgabe."
+                        },
+                        {
+                            "question": "Wie können Sie mehrere Variablen in einer printf()-Anweisung ausgeben?",
+                            "answer": "Durch mehrere Formatbezeichner im String und entsprechende Variablen als Argumente, z. B. printf(\"%d %f\", num, value);"
+                        },
+                        {
+                            "question": "Wie geben Sie einen float-Wert mit genau zwei Dezimalstellen aus?",
+                            "answer": "Mit dem Formatbezeichner \"%.2f\", z. B. printf(\"%.2f\", 3.1415);"
+                        },
+                        {
+                            "question": "Welche Probleme können bei scanf() auftreten?",
+                            "answer": "Pufferüberlauf bei Strings (z. B. mit %s ohne Längenangabe), falsche Formatbezeichner führen zu undefiniertem Verhalten."
+                        },
+                        {
+                            "question": "Codebeispiel: Benutzer nach Name und Alter fragen und ausgeben.",
+                            "answer": "char name[50];\nint age;\nprintf(\"Name: \");\nscanf(\"%49s\", name);\nprintf(\"Alter: \");\nscanf(\"%d\", &age);\nprintf(\"%s ist %d Jahre alt.\", name, age);"
+                        },
+                        {
+                            "question": "Wie unterscheidet sich die Eingabe von Zeichenketten von anderen Datentypen?",
+                            "answer": "Strings (char-Arrays) benötigen bei scanf() kein &, da der Array-Name bereits die Adresse des ersten Elements ist. Risiko von Pufferüberläufen erfordert Längenbegrenzung (z. B. %49s)."
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "4. Anweisungen / Befehlsblöcke / Gültigkeitsbereiche (10 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Was ist ein Befehlsblock in C und wie wird er abgegrenzt?",
+                            "answer": "Ein Befehlsblock ist eine Gruppe von Anweisungen, die in geschweiften Klammern { } eingeschlossen sind."
+                        },
+                        {
+                            "question": "Wie werden Anweisungen in C voneinander getrennt?",
+                            "answer": "Anweisungen werden durch ein Semikolon (;) getrennt."
+                        },
+                        {
+                            "question": "Erklären Sie den Begriff 'Gültigkeitsbereich' (Scope) einer Variablen.",
+                            "answer": "Der Gültigkeitsbereich bestimmt, in welchem Teil des Programms eine Variable sichtbar ist."
+                        },
+                        {
+                            "question": "Was unterscheidet globale von lokalen Variablen?",
+                            "answer": "Globale Variablen sind überall verfügbar, während lokale Variablen nur innerhalb des Blocks verfügbar sind, in dem sie deklariert wurden."
+                        },
+                        {
+                            "question": "Wie beeinflusst ein Befehlsblock den Gültigkeitsbereich?",
+                            "answer": "Ein Befehlsblock schränkt den Gültigkeitsbereich auf den Block ein."
+                        },
+                        {
+                            "question": "Schreiben Sie einen Codeausschnitt, der einen if-Befehlsblock demonstriert.",
+                            "answer": "/* English code and comments */\n#include <stdio.h>\nint main(void) {\n    int a = 5;\n    if (a > 0) {\n        int b = 10; // local to block\n        printf(\"Inside block: b = %d\\n\", b);\n    }\n    return 0;\n}"
+                        },
+                        {
+                            "question": "Was passiert, wenn innerhalb eines Blocks eine Variable den gleichen Namen wie eine globale Variable hat?",
+                            "answer": "Die lokale Variable überschattet die globale innerhalb des Blocks."
+                        },
+                        {
+                            "question": "Wie verbessern Befehlsblöcke die Lesbarkeit?",
+                            "answer": "Befehlsblöcke strukturieren den Code und begrenzen den Scope von Variablen, was die Lesbarkeit verbessert."
+                        },
+                        {
+                            "question": "Geben Sie ein Beispiel, wie man den Scope einer Variablen einschränkt.",
+                            "answer": "Zum Beispiel: for (int i = 0; i < n; i++) – i ist nur innerhalb der Schleife sichtbar."
+                        },
+                        {
+                            "question": "Was passiert, wenn auf eine Variable außerhalb ihres Scopes zugegriffen wird?",
+                            "answer": "Dies führt zu einem Kompilierfehler."
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "5. Operatoren (10 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Was ist ein Operator in C und welche arithmetischen Operatoren gibt es?",
+                            "answer": "Grundlegende arithmetische Operatoren: +, -, *, /, %."
+                        },
+                        {
+                            "question": "Welche Operatoren werden zur Zuweisung verwendet?",
+                            "answer": "Der Zuweisungsoperator = sowie kombinierte Operatoren wie += usw."
+                        },
+                        {
+                            "question": "Erklären Sie Präfix- vs. Postfix-Inkrement.",
+                            "answer": "Bei Präfix (++a) wird vor der Verwendung erhöht, bei Postfix (a++) danach."
+                        },
+                        {
+                            "question": "Was bewirkt der Modulo-Operator (%)?",
+                            "answer": "Er berechnet den Rest einer ganzzahligen Division."
+                        },
+                        {
+                            "question": "Wie funktioniert die Operatorrangfolge in C?",
+                            "answer": "Die Auswertungsreihenfolge wird durch die Rangfolge festgelegt, wobei Klammern diese überschreiben."
+                        },
+                        {
+                            "question": "Schreiben Sie einen Codeausschnitt, der arithmetische Operationen demonstriert.",
+                            "answer": "/* English code and comments */\n#include <stdio.h>\nint main(void) {\n    int a = 15, b = 4;\n    printf(\"a + b = %d\\n\", a + b);\n    printf(\"a - b = %d\\n\", a - b);\n    printf(\"a * b = %d\\n\", a * b);\n    printf(\"a / b = %d\\n\", a / b);\n    printf(\"a %% b = %d\\n\", a % b);\n    return 0;\n}"
+                        },
+                        {
+                            "question": "Wie werden logische Operatoren eingesetzt?",
+                            "answer": "Beispiele: &&, ||, ! – sie kombinieren boolesche Ausdrücke."
+                        },
+                        {
+                            "question": "Was ist der ternäre Operator und wie wird er genutzt?",
+                            "answer": "Er lautet: condition ? value_if_true : value_if_false und ist eine Kurzform von if-else."
+                        },
+                        {
+                            "question": "Geben Sie ein Beispiel, das den kleineren Wert bestimmt.",
+                            "answer": "/* English code and comments */\n#include <stdio.h>\nint main(void) {\n    int x = 5, y = 10;\n    int min = (x < y) ? x : y;\n    printf(\"The smaller value is %d\\n\", min);\n    return 0;\n}"
+                        },
+                        {
+                            "question": "Diskutieren Sie, wie komplexe Ausdrücke gebildet werden.",
+                            "answer": "Durch Kombination von arithmetischen, Vergleichs- und logischen Operatoren; die Rangfolge steuert die Auswertung."
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "6. Vergleiche / Schleifen (10 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Welche Vergleichsoperatoren gibt es in C und was bewirken sie?",
+                            "answer": "Beispiele: ==, !=, <, >, <=, >=."
+                        },
+                        {
+                            "question": "Erklären Sie den Unterschied zwischen Zuweisung und Vergleich.",
+                            "answer": "Der Zuweisungsoperator (=) weist einen Wert zu, während der Vergleichsoperator (==) auf Gleichheit prüft."
+                        },
+                        {
+                            "question": "Welche Schleifenarten gibt es in C (<C98)?",
+                            "answer": "For-, while- und do-while-Schleifen."
+                        },
+                        {
+                            "question": "Beschreiben Sie den Aufbau einer for-Schleife.",
+                            "answer": "Eine for-Schleife besteht aus Initialisierung, Bedingung und Iteration, z. B. for (int i = 0; i < n; i++)."
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen while- und do-while-Schleifen?",
+                            "answer": "while prüft die Bedingung vor der Ausführung, do-while mindestens einmal nach der Ausführung."
+                        },
+                        {
+                            "question": "Schreiben Sie einen Codeausschnitt, der die Zahlen 1 bis 10 ausgibt.",
+                            "answer": "/* English code and comments */\n#include <stdio.h>\nint main(void) {\n    for (int i = 1; i <= 10; i++) {\n        printf(\"%d \", i);\n    }\n    printf(\"\\n\");\n    return 0;\n}"
+                        },
+                        {
+                            "question": "Wie kann eine endlose Schleife beendet werden?",
+                            "answer": "Mit einem break-Statement, wenn eine definierte Bedingung erfüllt ist."
+                        },
+                        {
+                            "question": "Wie werden logische Vergleiche in Bedingungen eingesetzt?",
+                            "answer": "Sie werden in if- oder while-Anweisungen verwendet, um einen booleschen (true/false) Wert zu ermitteln."
+                        },
+                        {
+                            "question": "Wann ist der Einsatz einer for-Schleife besonders sinnvoll?",
+                            "answer": "Wenn die Anzahl der Iterationen von vornherein bekannt ist."
+                        },
+                        {
+                            "question": "Erklären Sie den Einsatz von break in Schleifen.",
+                            "answer": "/* English code and comments */\n#include <stdio.h>\nint main(void) {\n    for (int i = 0; i < 10; i++) {\n        if (i == 5) {\n            break;\n        }\n        printf(\"%d \", i);\n    }\n    printf(\"\\n\");\n    return 0;\n}"
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "7. Pointer (10 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Was ist ein Pointer in C und wofür wird er eingesetzt?",
+                            "answer": "Ein Pointer speichert die Speicheradresse einer anderen Variable, um indirekten Zugriff zu ermöglichen."
+                        },
+                        {
+                            "question": "Wie deklariert man einen Pointer auf einen int?",
+                            "answer": "Deklaration: int *ptr;"
+                        },
+                        {
+                            "question": "Erklären Sie den Unterschied zwischen einer normalen Variable und einem Pointer.",
+                            "answer": "Normale Variablen speichern Werte, während Pointer Adressen speichern."
+                        },
+                        {
+                            "question": "Wie erhält man die Adresse einer Variable in C?",
+                            "answer": "Mit dem Adressoperator &, z. B. &value."
+                        },
+                        {
+                            "question": "Schreiben Sie einen Codeausschnitt, der einen Pointer deklariert, initialisiert und dereferenziert.",
+                            "answer": "/* English code and comments */\n#include <stdio.h>\nint main(void) {\n    int value = 20;\n    int *ptr = &value;\n    printf(\"Value via pointer: %d\\n\", *ptr);\n    return 0;\n}"
+                        },
+                        {
+                            "question": "Was bedeutet Dereferenzierung eines Pointers?",
+                            "answer": "Mit dem Operator * wird der Wert der Adresse gelesen, auf die der Pointer zeigt."
+                        },
+                        {
+                            "question": "Wie können Pointer in Funktionen verwendet werden, um Werte zu ändern?",
+                            "answer": "Man übergibt die Adresse der Variable, sodass die Funktion den Wert via Pointer ändern kann."
+                        },
+                        {
+                            "question": "Was passiert, wenn ein Pointer uninitialisiert ist?",
+                            "answer": "Uninitialisierte Pointer führen zu undefiniertem Verhalten oder können einen Absturz (Segmentation Fault) verursachen."
+                        },
+                        {
+                            "question": "Erklären Sie den Unterschied zwischen Pointer-Arithmetik und normaler Arithmetik.",
+                            "answer": "Pointer-Arithmetik verschiebt die Adresse um die Größe des Datentyps, während bei normaler Arithmetik der numerische Wert verändert wird."
+                        },
+                        {
+                            "question": "Geben Sie ein Beispiel, in dem Pointer-Arithmetik auf ein Array angewendet wird.",
+                            "answer": "/* English code and comments */\n#include <stdio.h>\nint main(void) {\n    int array[5] = {10, 20, 30, 40, 50};\n    int *ptr = array;\n    for (int i = 0; i < 5; i++) {\n        printf(\"Element %d: %d\\n\", i, *(ptr + i));\n    }\n    return 0;\n}"
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "8. Arrays (10 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Was ist ein Array in C und wie deklariert man ein Array mit 10 int-Elementen?",
+                            "answer": "Ein Array ist eine Sammlung von Elementen desselben Typs. Beispiel: int arr[10];"
+                        },
+                        {
+                            "question": "Wie greift man auf ein Element eines Arrays zu?",
+                            "answer": "Über den Index, z. B. arr[3] (Index beginnt bei 0)."
+                        },
+                        {
+                            "question": "Erklären Sie den Unterschied zwischen statisch und dynamisch allozierten Arrays.",
+                            "answer": "Statische Arrays haben eine feste Größe zur Kompilierzeit, dynamische Arrays werden zur Laufzeit mittels malloc() erstellt."
+                        },
+                        {
+                            "question": "Wie sind die Elemente eines Arrays im Speicher angeordnet?",
+                            "answer": "Die Elemente werden in zusammenhängenden Speicherblöcken abgelegt, was einen schnellen, direkten Zugriff ermöglicht."
+                        },
+                        {
+                            "question": "Schreiben Sie einen Codeausschnitt, der ein Array von 5 floats deklariert und initialisiert.",
+                            "answer": "/* English code and comments */\n#include <stdio.h>\nint main(void) {\n    float numbers[5];\n    for (int i = 0; i < 5; i++) {\n        numbers[i] = i * 1.1f;\n    }\n    return 0;\n}"
+                        },
+                        {
+                            "question": "Was passiert, wenn auf einen ungültigen Array-Index zugegriffen wird?",
+                            "answer": "Dies führt zu undefiniertem Verhalten."
+                        },
+                        {
+                            "question": "Wie deklariert man ein zweidimensionales Array in C?",
+                            "answer": "Beispiel: int matrix[3][4];"
+                        },
+                        {
+                            "question": "Beschreiben Sie den Zusammenhang zwischen Arrays und Pointern in C.",
+                            "answer": "Der Arrayname ist ein Pointer auf das erste Element, wodurch Pointer-Arithmetik möglich ist."
+                        },
+                        {
+                            "question": "Wie übergibt man ein Array als Parameter an eine Funktion?",
+                            "answer": "Man übergibt den Arraynamen (der als Pointer fungiert) und meist zusätzlich die Größe des Arrays."
+                        },
+                        {
+                            "question": "Diskutieren Sie die Vor- und Nachteile von statischen vs. dynamischen Arrays.",
+                            "answer": "Statische Arrays sind einfach zu handhaben, bieten jedoch keine Flexibilität; dynamische Arrays ermöglichen flexible Größen, erfordern aber manuelle Speicherverwaltung."
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "9. Funktionen / Parameter / Rückgabe (10 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Was ist eine Funktion in C und warum ist sie nützlich?",
+                            "answer": "Funktionen ermöglichen die Modularisierung und Wiederverwendbarkeit von Code."
+                        },
+                        {
+                            "question": "Wie definiert und deklariert man eine Funktion in C? Erklären Sie den Unterschied zwischen Prototyp und Definition.",
+                            "answer": "Der Funktionsprototyp informiert den Compiler über die Funktion, während die Definition den tatsächlichen Code enthält."
+                        },
+                        {
+                            "question": "Wie werden Parameter übergeben und was bedeutet das für deren Scope?",
+                            "answer": "Parameter werden standardmäßig per Wert übergeben, wodurch innerhalb der Funktion Kopien der Argumentwerte verwendet werden."
+                        },
+                        {
+                            "question": "Was versteht man unter dem Rückgabewert einer Funktion?",
+                            "answer": "Der Rückgabewert ist das Ergebnis, das eine Funktion mittels return zurückgibt."
+                        },
+                        {
+                            "question": "Schreiben Sie einen Codeausschnitt, der zwei int-Werte addiert und das Ergebnis zurückgibt.",
+                            "answer": "/* English code and comments */\n#include <stdio.h>\nint add(int a, int b) {\n    return a + b;\n}\nint main(void) {\n    int result = add(3, 7);\n    printf(\"Result: %d\\n\", result);\n    return 0;\n}"
+                        },
+                        {
+                            "question": "Erklären Sie den Unterschied zwischen void-Funktionen und Funktionen mit Rückgabewert.",
+                            "answer": "Void-Funktionen geben keinen Wert zurück, während Funktionen mit Rückgabewert ein Ergebnis liefern."
+                        },
+                        {
+                            "question": "Wie können Funktionen rekursiv aufgerufen werden? Nennen Sie ein Beispiel.",
+                            "answer": "Beispiel: Eine Fakultätsfunktion, die sich selbst mit n * fakultaet(n-1) aufruft, bis eine Abbruchbedingung erreicht ist."
+                        },
+                        {
+                            "question": "Welche Vorteile bietet die Modularität durch Funktionen?",
+                            "answer": "Modulare Funktionen erleichtern Wartung, Wiederverwendung und Testbarkeit des Codes."
+                        },
+                        {
+                            "question": "Wie gehen Sie in einer Funktion mit Fehlerfällen um?",
+                            "answer": "Durch spezielle Rückgabewerte, globale Fehlervariablen oder die Verwendung von errno."
+                        },
+                        {
+                            "question": "Beschreiben Sie, wie Funktionsparameter den Ablauf eines Programms beeinflussen.",
+                            "answer": "Parameter liefern die Daten, mit denen eine Funktion arbeitet; je nach Übergabemethode können Änderungen den Programmfluss beeinflussen."
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "10. call-by-value / call-by-reference (10 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Was bedeutet call-by-value in C?",
+                            "answer": "Bei call-by-value werden Kopien der Argumentwerte an die Funktion übergeben."
+                        },
+                        {
+                            "question": "Wie realisiert man call-by-reference in C?",
+                            "answer": "Durch die Übergabe der Adresse der Variable, also mittels Pointer."
+                        },
+                        {
+                            "question": "Warum verwendet C standardmäßig call-by-value?",
+                            "answer": "Um unbeabsichtigte Änderungen an den Originaldaten zu vermeiden."
+                        },
+                        {
+                            "question": "Schreiben Sie einen Codeausschnitt, der zeigt, dass call-by-value Änderungen nicht außerhalb sichtbar sind.",
+                            "answer": "/* English code and comments */\n#include <stdio.h>\nvoid modify(int value) {\n    value = 100;\n}\nint main(void) {\n    int num = 50;\n    modify(num);\n    printf(\"num: %d\\n\", num); // Gibt 50 aus\n    return 0;\n}"
+                        },
+                        {
+                            "question": "Wie simuliert man call-by-reference in C?",
+                            "answer": "Durch die Übergabe der Adresse der Variable, z. B. modify(&num);"
+                        },
+                        {
+                            "question": "Schreiben Sie einen Codeausschnitt, der call-by-reference demonstriert.",
+                            "answer": "/* English code and comments */\n#include <stdio.h>\nvoid modify(int *ptr) {\n    *ptr = 200;\n}\nint main(void) {\n    int num = 50;\n    modify(&num);\n    printf(\"num: %d\\n\", num); // Gibt 200 aus\n    return 0;\n}"
+                        },
+                        {
+                            "question": "Welche Vor- und Nachteile bietet call-by-value vs. call-by-reference?",
+                            "answer": "Call-by-value schützt die Originaldaten, ist aber bei großen Daten ineffizient; call-by-reference vermeidet Kopien, birgt jedoch das Risiko ungewollter Änderungen."
+                        },
+                        {
+                            "question": "Diskutieren Sie mögliche Fehlerquellen bei call-by-reference.",
+                            "answer": "Ungültige oder uninitialisierte Pointer können zu Abstürzen führen."
+                        },
+                        {
+                            "question": "Wie beeinflusst die Parameterübergabe das Verhalten einer Funktion?",
+                            "answer": "Call-by-value arbeitet mit Kopien, während call-by-reference direkt mit den Originaldaten arbeitet, was den Programmfluss ändern kann."
+                        },
+                        {
+                            "question": "In welchen Szenarien ist call-by-reference besonders nützlich?",
+                            "answer": "Wenn große Datenstrukturen verarbeitet oder Originalwerte geändert werden sollen, z. B. bei Sortieralgorithmen."
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "11. Dynamische Speicherverwaltung (malloc / free) (10 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Was ist dynamische Speicherverwaltung in C und warum ist sie wichtig?",
+                            "answer": "Sie ermöglicht die Anforderung und Freigabe von Speicher zur Laufzeit, wenn die benötigte Größe nicht zur Kompilierzeit bekannt ist."
+                        },
+                        {
+                            "question": "Wie verwendet man malloc() zur Reservierung von Speicher?",
+                            "answer": "Syntax: ptr = (cast_type*) malloc(number_of_elements * sizeof(datatype));"
+                        },
+                        {
+                            "question": "Erklären Sie den Unterschied zwischen malloc() und calloc().",
+                            "answer": "malloc() reserviert uninitialisierten Speicher, während calloc() den reservierten Speicher mit Nullen initialisiert."
+                        },
+                        {
+                            "question": "Warum ist es wichtig, Speicher mit free() wieder freizugeben?",
+                            "answer": "Ohne free() kommt es zu Speicherlecks, da der reservierte Speicher nicht zurückgegeben wird."
+                        },
+                        {
+                            "question": "Schreiben Sie einen Codeausschnitt, der dynamisch ein Array von 10 ints allokiert und freigibt.",
+                            "answer": "/* English code and comments */\n#include <stdio.h>\n#include <stdlib.h>\nint main(void) {\n    int *arr = (int *)malloc(10 * sizeof(int));\n    if (arr == NULL) {\n        printf(\"Memory allocation failed.\\n\");\n        return 1;\n    }\n    /* Verwendung des Arrays */\n    free(arr);\n    return 0;\n}"
+                        },
+                        {
+                            "question": "Was passiert, wenn malloc() keinen Speicher mehr reservieren kann?",
+                            "answer": "malloc() gibt in diesem Fall NULL zurück."
+                        },
+                        {
+                            "question": "Wie können Speicherlecks vermieden werden?",
+                            "answer": "Jeder allokierte Speicherblock muss mit free() wieder freigegeben werden."
+                        },
+                        {
+                            "question": "Erklären Sie den Zusammenhang zwischen dynamisch allokiertem Speicher und Zeigern.",
+                            "answer": "Dynamischer Speicher wird über Pointer referenziert, daher ist die korrekte Verwaltung der Pointer entscheidend."
+                        },
+                        {
+                            "question": "Was unterscheidet statischen von dynamischem Speicher?",
+                            "answer": "Statischer Speicher wird zur Kompilierzeit zugewiesen, dynamischer Speicher zur Laufzeit."
+                        },
+                        {
+                            "question": "Wie und wann würde man realloc() einsetzen?",
+                            "answer": "realloc() passt die Größe eines bereits allokierten Speicherblocks an, z. B. wenn ein Array erweitert werden soll."
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "12. Strukturen (10 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Was ist eine Struktur in C und wie wird sie definiert?",
+                            "answer": "Eine Struktur fasst verschiedene Datentypen unter einem Namen zusammen – definiert mit dem Schlüsselwort struct."
+                        },
+                        {
+                            "question": "Wie deklariert man eine Strukturvariable und greift auf deren Mitglieder zu?",
+                            "answer": "Entweder direkt mit 'struct Name variable;' oder durch die Verwendung von typedef, wobei auf Mitglieder mit dem Punktoperator (variable.member) zugegriffen wird."
+                        },
+                        {
+                            "question": "Erklären Sie den Unterschied zwischen Strukturen und Arrays.",
+                            "answer": "Arrays speichern Elemente desselben Typs, während Strukturen unterschiedliche Datentypen bündeln."
+                        },
+                        {
+                            "question": "Schreiben Sie einen Codeausschnitt, der eine Struktur zur Speicherung von Personendaten definiert und initialisiert.",
+                            "answer": "/* English code and comments */\n#include <stdio.h>\nstruct Person {\n    char name[50];\n    int age;\n};\nint main(void) {\n    struct Person person1 = {\"Alice\", 30};\n    printf(\"Name: %s, Age: %d\\n\", person1.name, person1.age);\n    return 0;\n}"
+                        },
+                        {
+                            "question": "Was bewirkt der Einsatz von typedef mit Strukturen?",
+                            "answer": "Mit typedef kann man einen Alias für die Struktur definieren, was die Deklaration vereinfacht."
+                        },
+                        {
+                            "question": "Wie werden Strukturen als Parameter an Funktionen übergeben?",
+                            "answer": "Strukturen werden standardmäßig per Wert übergeben; für Änderungen übergibt man einen Pointer auf die Struktur."
+                        },
+                        {
+                            "question": "Schreiben Sie einen Codeausschnitt, der eine Funktion implementiert, die eine Struktur als Parameter erhält und ein Mitglied ändert.",
+                            "answer": "/* English code and comments */\n#include <stdio.h>\nstruct Data {\n    int value;\n};\nvoid update(struct Data *d) {\n    d->value = 99;\n}\nint main(void) {\n    struct Data d1 = {10};\n    update(&d1);\n    printf(\"Updated value: %d\\n\", d1.value);\n    return 0;\n}"
+                        },
+                        {
+                            "question": "Wie können Strukturen verschachtelt werden? Geben Sie ein Beispiel.",
+                            "answer": "Eine Struktur kann ein Mitglied besitzen, das selbst eine Struktur ist, um komplexe Datenhierarchien zu modellieren."
+                        },
+                        {
+                            "question": "Was muss bei Strukturen bezüglich des Gültigkeitsbereichs beachtet werden?",
+                            "answer": "Lokale Strukturvariablen sind nur innerhalb des Blocks oder der Funktion verfügbar, in der sie deklariert wurden."
+                        },
+                        {
+                            "question": "Schreiben Sie einen Codeausschnitt, der dynamisch Speicher für eine Struktur allokiert und wieder freigibt.",
+                            "answer": "/* English code and comments */\n#include <stdio.h>\n#include <stdlib.h>\nstruct Data {\n    int value;\n};\nint main(void) {\n    struct Data *dPtr = (struct Data *)malloc(sizeof(struct Data));\n    if (dPtr == NULL) {\n        printf(\"Memory allocation failed.\\n\");\n        return 1;\n    }\n    dPtr->value = 42;\n    printf(\"Value: %d\\n\", dPtr->value);\n    free(dPtr);\n    return 0;\n}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "deepseek",
+            "title": "DeepSeek",
+            "areas": [
+                {
+                    "areaTitle": "1. Variablen und Datentypen (25 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Welche Ganzzahl-Datentypen kennt C98?",
+                            "answer": "- int, short, long, char (mit Modifiern wie unsigned)"
+                        },
+                        {
+                            "question": "Deklariere eine Variable `age` vom Typ `int`.",
+                            "answer": "int age;"
+                        },
+                        {
+                            "question": "Was ist der Standardwert einer nicht initialisierten lokalen Variable?",
+                            "answer": "- Unbestimmt (Zufallswert)"
+                        },
+                        {
+                            "question": "Wie speichert man den Buchstaben 'Z' in einem `char`?",
+                            "answer": "char c = 'Z'; // oder ASCII 90"
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen `3` und `3.0`?",
+                            "answer": "- `3` ist int, `3.0` ist double"
+                        },
+                        {
+                            "question": "Wie wandelt man `float f = 3.14` explizit in `int` um?",
+                            "answer": "int i = (int)f;"
+                        },
+                        {
+                            "question": "Welcher Datentyp ist für Wahrheitswerte in C98 üblich?",
+                            "answer": "- int (0 = false, ≠0 = true)"
+                        },
+                        {
+                            "question": "Wie groß ist `sizeof(char)` garantiert?",
+                            "answer": "- Immer 1 Byte (definiert im Standard)"
+                        },
+                        {
+                            "question": "Was ist der Wertebereich von `unsigned char`?",
+                            "answer": "- 0 bis 255 (bei 8-Bit)"
+                        },
+                        {
+                            "question": "Was gibt `printf(\"%d\", sizeof(short));` typischerweise aus?",
+                            "answer": "- 2 (Bytes)"
+                        },
+                        {
+                            "question": "Warum ist `char c = 130;` auf einem System mit signed char undefiniert?",
+                            "answer": "- Überlauf (maximaler signed char: 127)"
+                        },
+                        {
+                            "question": "Erkläre den Unterschied zwischen `float` und `double`.",
+                            "answer": "- Größe/Genauigkeit: float (32 Bit, ~6-7 Stellen), double (64 Bit, ~15 Stellen)"
+                        },
+                        {
+                            "question": "Was ist der Zweck von `volatile`?",
+                            "answer": "- Verhindert Compiler-Optimierungen (z.B. für Hardware-Register)"
+                        },
+                        {
+                            "question": "Welcher Code initialisiert ein Array mit 5 Nullen?",
+                            "answer": "int arr[5] = {0};"
+                        },
+                        {
+                            "question": "Warum ist `int x = 1.999999;` sicher, `int y = 1e100;` aber nicht?",
+                            "answer": "- 1e100 übersteigt den int-Bereich → Undefiniertes Verhalten"
+                        },
+                        {
+                            "question": "Was ist ein \"Integer Promotion\"?",
+                            "answer": "- Automatische Umwandlung kleiner Integer-Typen (z.B. char) in int"
+                        },
+                        {
+                            "question": "Wie verhält sich `sizeof` bei Arrays?",
+                            "answer": "- Gibt Gesamtgröße in Bytes zurück (nicht Anzahl der Elemente)"
+                        },
+                        {
+                            "question": "Warum ist `long double` nicht portabel?",
+                            "answer": "- Implementierungsabhängige Größe/Genauigkeit"
+                        },
+                        {
+                            "question": "Was bedeutet \"Little-Endian\" vs. \"Big-Endian\"?",
+                            "answer": "- Byte-Reihenfolge im Speicher (LSB first vs. MSB first)"
+                        },
+                        {
+                            "question": "Wie prüft man, ob ein `char` ein Ziffernzeichen ist?",
+                            "answer": "if (c >= '0' && c <= '9')"
+                        },
+                        {
+                            "question": "Warum ist `(float)1e30 == (double)1e30` möglicherweise falsch?",
+                            "answer": "- float hat geringere Genauigkeit → Rundungsfehler"
+                        },
+                        {
+                            "question": "Was ist ein \"strict aliasing\"-Verstoß?",
+                            "answer": "- Zugriff auf Objekt durch Pointer inkompatiblen Typs (undefiniert)"
+                        },
+                        {
+                            "question": "Wie funktioniert die Bitdarstellung von `float` nach IEEE 754?",
+                            "answer": "- 1 Bit Vorzeichen, 8 Bit Exponent, 23 Bit Mantisse"
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen `size_t` und `ptrdiff_t`?",
+                            "answer": "- size_t: unsigned (Größen)  - ptrdiff_t: signed (Differenzen zwischen Pointern)"
+                        },
+                        {
+                            "question": "Warum ist `int* p = malloc(sizeof(int));` in C98 problematisch?",
+                            "answer": "- Fehlendes Casting: `int* p = (int*)malloc(...);` (in C optional, in C++ nötig)"
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "2. main() (25 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Wie deklariert man die main-Funktion ohne Parameter?",
+                            "answer": "int main(void) { ... }"
+                        },
+                        {
+                            "question": "Welchen Rückgabetyp hat main() standardmäßig?",
+                            "answer": "int"
+                        },
+                        {
+                            "question": "Schreibe eine main()-Funktion, die \"Hallo Welt!\" ausgibt.",
+                            "answer": "#include <stdio.h>\nint main(void) {\n    printf(\"Hallo Welt!\");\n    return 0;\n}"
+                        },
+                        {
+                            "question": "Was bedeutet der Rückgabewert 0?",
+                            "answer": "- Erfolgreiche Ausführung (EXIT_SUCCESS)"
+                        },
+                        {
+                            "question": "Was sind die Standardparameter von main() für Kommandozeilenargumente?",
+                            "answer": "int argc, char *argv[]"
+                        },
+                        {
+                            "question": "Wie viele Argumente enthält argv, wenn das Programm ohne Parameter gestartet wird?",
+                            "answer": "- 1 (argv[0] = Programmname)"
+                        },
+                        {
+                            "question": "Wie gibt man den Programmnamen aus?",
+                            "answer": "printf(\"Programm: %s\", argv[0]);"
+                        },
+                        {
+                            "question": "Was passiert, wenn main() keinen return-Befehl hat?",
+                            "answer": "- C98: Undefiniert (C99+: implizit return 0)"
+                        },
+                        {
+                            "question": "Wie beendet man das Programm vorzeitig?",
+                            "answer": "exit(EXIT_FAILURE); // #include <stdlib.h>"
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen exit(0) und return 0?",
+                            "answer": "- exit(0) beendet sofort, return 0 gibt Kontrolle an den Aufrufer zurück"
+                        },
+                        {
+                            "question": "Warum ist void main() in C98 nicht standardkonform?",
+                            "answer": "- Der ISO-Standard verlangt int als Rückgabetyp"
+                        },
+                        {
+                            "question": "Wie liest man eine Zahl aus den Kommandozeilenargumenten?",
+                            "answer": "int num = atoi(argv[1]); // #include <stdlib.h>"
+                        },
+                        {
+                            "question": "Was bedeutet argc?",
+                            "answer": "- Anzahl der Kommandozeilenargumente (inkl. Programmname)"
+                        },
+                        {
+                            "question": "Wie prüft man, ob genau 2 Argumente übergeben wurden?",
+                            "answer": "if (argc == 3) { ... } // argc zählt Programmname mit"
+                        },
+                        {
+                            "question": "Warum ist argv[argc] immer NULL?",
+                            "answer": "- Markiert das Ende der Argumentenliste (nicht in C98 garantiert!)"
+                        },
+                        {
+                            "question": "Wie gibt man alle Kommandozeilenargumente aus?",
+                            "answer": "for (int i = 0; i < argc; i++) printf(\"Arg %d: %s\\n\", i, argv[i]);"
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen main() und main(void) in C98?",
+                            "answer": "- main() erlaubt beliebige Parameter (veraltet), main(void) keine"
+                        },
+                        {
+                            "question": "Wie übergibt man Umgebungsvariablen an main()?",
+                            "answer": "- Dritter Parameter: char *envp[] (nicht standardisiert, compilerabhängig)"
+                        },
+                        {
+                            "question": "Warum ist main() kein Schlüsselwort in C?",
+                            "answer": "- Es ist eine Funktion, kein reserviertes Wort"
+                        },
+                        {
+                            "question": "Wie reagiert das Programm auf argv == NULL?",
+                            "answer": "- Undefiniertes Verhalten (darf nie passieren)"
+                        },
+                        {
+                            "question": "Kann main() rekursiv aufgerufen werden?",
+                            "answer": "- Ja, aber undefiniertes Verhalten nach C-Standard"
+                        },
+                        {
+                            "question": "Warum darf main() nicht inline deklariert werden?",
+                            "answer": "- Der Standard verbietet es explizit (C99 §5.1.2.2.1)"
+                        },
+                        {
+                            "question": "Was ist der \"Freestanding\"-Modus in C?",
+                            "answer": "- Umgebung ohne Betriebssystem, main() ist optional (z.B. Embedded-Systeme)"
+                        },
+                        {
+                            "question": "Wie implementiert man main() in einer Shared Library?",
+                            "answer": "- Gar nicht, Bibliotheken haben keine main()"
+                        },
+                        {
+                            "question": "Warum kann man main() nicht per Pointer aufrufen?",
+                            "answer": "- Der Standard verbietet die Adressnahme von main() (C99 §5.1.2.2.1)"
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "3. Ein- und Ausgaben / Formatbezeichner (25 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Wie liest man eine Ganzzahl mit scanf?",
+                            "answer": "int x;\nscanf(\"%d\", &x);"
+                        },
+                        {
+                            "question": "Welcher Formatbezeichner wird für double in printf verwendet?",
+                            "answer": "%f"
+                        },
+                        {
+                            "question": "Korrigiere den Fehler:\nfloat f;\nscanf(\"%d\", &f);",
+                            "answer": "float f;\nscanf(\"%f\", &f);"
+                        },
+                        {
+                            "question": "Wie gibt man einen char als Buchstabe und ASCII-Wert aus?",
+                            "answer": "printf(\"%c (%d)\", c, c);"
+                        },
+                        {
+                            "question": "Was macht printf(\"Hallo\\nWelt!\");?",
+                            "answer": "- Gibt \"Hallo\" und \"Welt!\" in zwei Zeilen aus"
+                        },
+                        {
+                            "question": "Wie liest man einen einzelnen Buchstaben mit scanf?",
+                            "answer": "char c;\nscanf(\" %c\", &c); // Leerzeichen ignoriert Whitespace"
+                        },
+                        {
+                            "question": "Welcher Formatbezeichner zeigt Hexadezimalzahlen an?",
+                            "answer": "%x (klein) oder %X (groß)"
+                        },
+                        {
+                            "question": "Wie gibt man ein Prozentzeichen (%) mit printf aus?",
+                            "answer": "printf(\"%%\");"
+                        },
+                        {
+                            "question": "Was macht printf(\"%10s\", \"Hallo\");?",
+                            "answer": "- Rechtsbündige Ausgabe in 10 Zeichen Breite: \"     Hallo\""
+                        },
+                        {
+                            "question": "Warum ist gets() gefährlich?",
+                            "answer": "- Keine Pufferüberlaufprüfung → Sicherheitslücke"
+                        },
+                        {
+                            "question": "Wie liest man eine Zeile mit maximal 50 Zeichen sicher ein?",
+                            "answer": "char str[51];\nfgets(str, 51, stdin);"
+                        },
+                        {
+                            "question": "Was bedeutet %5.2f in printf?",
+                            "answer": "- 5 Stellen Gesamtbreite, 2 Nachkommastellen"
+                        },
+                        {
+                            "question": "Wie gibt man einen long int aus?",
+                            "answer": "printf(\"%ld\", my_long);"
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen %i und %d?",
+                            "answer": "- %i interpretiert Oktal/Hex (0..., 0x...), %d nur Dezimal"
+                        },
+                        {
+                            "question": "Wie springt man bei scanf über Leerzeichen hinweg?",
+                            "answer": "- Leerzeichen im Formatstring: scanf(\" %d\", &x);"
+                        },
+                        {
+                            "question": "Was macht sprintf(buffer, \"%d\", x);",
+                            "answer": "- Schreibt die Zahl x als String in den Puffer"
+                        },
+                        {
+                            "question": "Wie liest man zwei Zahlen in einem scanf-Aufruf?",
+                            "answer": "scanf(\"%d %f\", &i, &f);"
+                        },
+                        {
+                            "question": "Warum kann scanf(\"%s\", str); gefährlich sein?",
+                            "answer": "- Keine Begrenzung der Eingabelänge → Buffer Overflow"
+                        },
+                        {
+                            "question": "Wie gibt man ein unsigned int im Oktalformat aus?",
+                            "answer": "printf(\"%o\", num);"
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen puts(\"Hallo\") und printf(\"Hallo\")?",
+                            "answer": "- puts fügt automatisch einen Zeilenumbruch hinzu"
+                        },
+                        {
+                            "question": "Wie liest man genau 5 Zeichen in einen String?",
+                            "answer": "char str[6];\nscanf(\"%5s\", str); // Sichert Platz für '\\0'"
+                        },
+                        {
+                            "question": "Was ist der format string exploit?",
+                            "answer": "- Sicherheitslücke durch nicht validierte Formatstrings, z.B. printf(user_input);"
+                        },
+                        {
+                            "question": "Wie gibt man eine double-Zahl in exponentieller Schreibweise aus?",
+                            "answer": "printf(\"%e\", x); // z.B. 3.1415e+00"
+                        },
+                        {
+                            "question": "Warum kann fflush(stdin) undefiniertes Verhalten auslösen?",
+                            "answer": "- Nur für Ausgabestreams definiert (nicht für Eingabe)"
+                        },
+                        {
+                            "question": "Wie implementiert man eine formatierte Ausgabe in einen String ohne sprintf?",
+                            "answer": "char buffer[100];\nint len = snprintf(buffer, 100, \"%d\", x);\n// Sicher gegen Pufferüberläufe"
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "4. Anweisungen / Befehlsblöcke / Gültigkeitsbereiche (25 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Was ist ein Block in C (Syntax)?",
+                            "answer": "- Durch { } umschlossener Codebereich"
+                        },
+                        {
+                            "question": "Wie definiert man eine lokale Variable in einem Block?",
+                            "answer": "{ int x = 5; }"
+                        },
+                        {
+                            "question": "Warum ist dieser Code ungültig?\n{\n    int x = 10;\n}\nprintf(\"%d\", x);",
+                            "answer": "- `x` existiert nur innerhalb des Blocks"
+                        },
+                        {
+                            "question": "Was ist der Gültigkeitsbereich einer in main() deklarierten Variable?",
+                            "answer": "- Vom Deklarationspunkt bis zum Ende von main()"
+                        },
+                        {
+                            "question": "Wie schreibt man eine if-Anweisung ohne else?",
+                            "answer": "if (bedingung) { // Code }"
+                        },
+                        {
+                            "question": "Kann man Variablen in einem inneren Block neu deklarieren?",
+                            "answer": "- Ja (Shadowing): { int x = 5; { int x = 10; // Überschattet äußeres x } }"
+                        },
+                        {
+                            "question": "Was ist eine \"automatische Variable\"?",
+                            "answer": "- Lokale Variable, die beim Blockende zerstört wird"
+                        },
+                        {
+                            "question": "Wie viele Anweisungen sind nach einem if ohne { } gültig?",
+                            "answer": "- 1 Anweisung (bis zum nächsten Semikolon)"
+                        },
+                        {
+                            "question": "Was bewirkt das Schlüsselwort static bei lokalen Variablen?",
+                            "answer": "- Variable behält Wert zwischen Funktionsaufrufen"
+                        },
+                        {
+                            "question": "Was ist ein \"dead code\"?",
+                            "answer": "- Code, der nie erreicht wird (z.B. nach return)"
+                        },
+                        {
+                            "question": "Warum ist if (x = 5) riskant?",
+                            "answer": "- Zuweisung statt Vergleich (immer true)"
+                        },
+                        {
+                            "question": "Wie lange existiert eine globale Variable?",
+                            "answer": "- Vom Programmstart bis zum Ende"
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen break und continue?",
+                            "answer": "- break: Beendet Schleife, continue: Springt zum nächsten Durchlauf"
+                        },
+                        {
+                            "question": "Warum sind globale Variablen schlechter Stil?",
+                            "answer": "- Führen zu Seiteneffekten und schwer nachvollziehbarem Code"
+                        },
+                        {
+                            "question": "Wie tauscht man zwei Variablen ohne temporäre Variable?",
+                            "answer": "a ^= b; b ^= a; a ^= b; // Nur für integers"
+                        },
+                        {
+                            "question": "Was ist ein \"Dangling Else\"-Problem?",
+                            "answer": "- Mehrdeutigkeit bei verschachtelten if-else ohne { }"
+                        },
+                        {
+                            "question": "Wie deklariert man eine Konstante nur innerhalb einer Datei?",
+                            "answer": "static const int MAX = 100; // Dateiweit sichtbar"
+                        },
+                        {
+                            "question": "Warum kann goto gefährlich sein?",
+                            "answer": "- Erzeugt Spaghetti-Code, schwer zu debuggen"
+                        },
+                        {
+                            "question": "Was ist der \"Short-Circuit\"-Effekt bei logischen Operatoren?",
+                            "answer": "- Bei &&: Wenn links false, rechts nicht ausgewertet; Bei ||: Wenn links true, rechts nicht ausgewertet"
+                        },
+                        {
+                            "question": "Wie implementiert man eine Fallunterscheidung ohne switch?",
+                            "answer": "if-else-Kette:\nif (x == 1) { ... } else if (x == 2) { ... } else { ... }"
+                        },
+                        {
+                            "question": "Was ist \"Sequence Point\" und warum ist es wichtig?",
+                            "answer": "- Punkt im Code, an dem alle Nebenwirkungen abgeschlossen sein müssen; z.B. zwischen &&, ||, ?:, Komma-Operator"
+                        },
+                        {
+                            "question": "Warum ist i++ + ++i undefiniert?",
+                            "answer": "- Ändert i zweimal ohne Sequence Point dazwischen (UB)"
+                        },
+                        {
+                            "question": "Wie implementiert man einen einmaligen Codeblock?",
+                            "answer": "static int executed = 0;\nif (!executed) {\n    // Code\n    executed = 1;\n}"
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen while(0) und do {...} while(0)?",
+                            "answer": "- do-while wird mindestens 1x ausgeführt, while(0) nie"
+                        },
+                        {
+                            "question": "Wie funktioniert \"Resource Acquisition Is Initialization\" (RAII) in C?",
+                            "answer": "- Nicht direkt unterstützt, aber durch { }-Blöcke emulierbar:\n{ FILE *f = fopen(...); /* Nutzung */ } // fclose(f) am Ende"
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "5. Operatoren (25 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Was gibt <code>5 / 2</code> in C zurück?",
+                            "answer": "2 (Integer-Division, Nachkommastellen abgeschnitten)"
+                        },
+                        {
+                            "question": "Unterschied zwischen <code>=</code> und <code>==</code>?",
+                            "answer": "<code>=</code> ist Zuweisung, <code>==</code> Vergleich"
+                        },
+                        {
+                            "question": "Wie funktioniert der Modulo-Operator <code>%</code> mit negativen Zahlen?",
+                            "answer": "- Ergebnis hat das Vorzeichen des Dividenden (C98); Beispiel: <code>-7 % 3 = -1</code>"
+                        },
+                        {
+                            "question": "Wie schreibt man <code>x = x + 5</code> kürzer?",
+                            "answer": "<code>x += 5;</code>"
+                        },
+                        {
+                            "question": "Was ergibt <code>!(3 < 5) || (2 != 2)</code>?",
+                            "answer": "<code>false</code> (da <code>!true || false → false</code>)"
+                        },
+                        {
+                            "question": "Unterschied zwischen <code>++i</code> und <code>i++</code>?",
+                            "answer": "Präinkrement: erst erhöhen, dann Wert verwenden; Postinkrement: erst Wert verwenden, dann erhöhen"
+                        },
+                        {
+                            "question": "Was macht <code>sizeof(int) * 5</code>?",
+                            "answer": "Berechnet die Größe von 5 int-Elementen (z.B. 20 Bytes bei 4-Byte-int)"
+                        },
+                        {
+                            "question": "Erkläre den Bitwise-Operator <code>&lt;&lt;</code>.",
+                            "answer": "Linksshift: Multipliziert die Zahl mit 2^n (z.B. <code>5 &lt;&lt; 2 = 20</code>)"
+                        },
+                        {
+                            "question": "Warum prüft <code>if (x & 1)</code> auf ungerade Zahlen?",
+                            "answer": "Das letzte Bit ist 1 bei ungeraden Zahlen"
+                        },
+                        {
+                            "question": "Wie prüft man, ob eine Zahl im Bereich [10, 20] liegt?",
+                            "answer": "<code>if (x >= 10 && x <= 20)</code>"
+                        },
+                        {
+                            "question": "Welche Operator-Rangfolge hat <code>*</code> vs. <code>==</code>?",
+                            "answer": "<code>*</code> hat höhere Priorität (wird zuerst ausgewertet)"
+                        },
+                        {
+                            "question": "Was ist ein \"Seiteneffekt\" eines Operators?",
+                            "answer": "Änderung des Variablenwerts (z.B. durch <code>++</code> oder <code>=</code>)"
+                        },
+                        {
+                            "question": "Wie setzt man das 3. Bit einer Zahl?",
+                            "answer": "<code>x |= (1 &lt;&lt; 3);</code>"
+                        },
+                        {
+                            "question": "Was macht der Compound-Operator <code>%=</code>?",
+                            "answer": "<code>x = x % y</code> wird zu <code>x %= y;</code>"
+                        },
+                        {
+                            "question": "Wie funktioniert der Komma-Operator <code>,</code>?",
+                            "answer": "Der Wert des gesamten Ausdrucks ist der letzte Teil, z.B. <code>int x = (a++, b++, c++); // x = c</code>"
+                        },
+                        {
+                            "question": "Was ist der ternäre Operator?",
+                            "answer": "Syntax: <code>bedingung ? expr_wahr : expr_falsch</code>; Beispiel: <code>int max = (a > b) ? a : b;</code>"
+                        },
+                        {
+                            "question": "Warum ist <code>i = i++</code> undefiniert?",
+                            "answer": "Änderung und Verwendung von <code>i</code> ohne Sequence Point dazwischen (UB)"
+                        },
+                        {
+                            "question": "Unterschied zwischen <code>&amp;&amp;</code> und <code>&amp;</code>?",
+                            "answer": "<code>&amp;&amp;</code> ist logisches UND (boolean), <code>&amp;</code> ist bitweises UND"
+                        },
+                        {
+                            "question": "Was ist ein Integer-Overflow?",
+                            "answer": "Wenn das Ergebnis einer Operation den Maximalwert des Datentyps überschreitet (UB)"
+                        },
+                        {
+                            "question": "Wie addiert man zu einem Pointer?",
+                            "answer": "<code>int *p = arr; p += 3;</code> (springt um 3 * sizeof(int))"
+                        },
+                        {
+                            "question": "Warum ist <code>a[i] = i++</code> undefiniert?",
+                            "answer": "Die Reihenfolge der Auswertung von <code>i</code> ist nicht garantiert (UB)"
+                        },
+                        {
+                            "question": "Wie invertiert man Bits ohne <code>~</code>?",
+                            "answer": "<code>x ^= 0xFF;</code> (XOR mit allen 1-Bits)"
+                        },
+                        {
+                            "question": "Was ist \"Operator Precedence Parsing\"?",
+                            "answer": "Ein Algorithmus zur Auswertung komplexer Ausdrücke basierend auf Prioritätsregeln"
+                        },
+                        {
+                            "question": "Warum ist <code>1 &lt;&lt; 31</code> bei 32-Bit-int problematisch?",
+                            "answer": "Überlauf in signed int → Undefiniertes Verhalten (bei signed)"
+                        },
+                        {
+                            "question": "Wie implementiert man \"logisches XOR\" in C?",
+                            "answer": "Beispiel: <code>if ((a || b) &amp;&amp; !(a &amp;&amp; b))</code> oder <code>if (!a != !b)</code>"
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "6. Vergleiche / Schleifen (25 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Wie schreibt man eine <code>for</code>-Schleife von 1 bis 10?",
+                            "answer": "for (int i = 1; i <= 10; i++) { ... }"
+                        },
+                        {
+                            "question": "Wie oft läuft diese Schleife?\n<pre>int i = 0; while (i < 0) { ... }</pre>",
+                            "answer": "0-mal (Bedingung ist sofort false)"
+                        },
+                        {
+                            "question": "Unterschied zwischen <code>while</code> und <code>do-while</code>?",
+                            "answer": "Eine do-while-Schleife läuft mindestens einmal, während while erst die Bedingung prüft."
+                        },
+                        {
+                            "question": "Wie bricht man eine Schleife vorzeitig ab?",
+                            "answer": "Mit <code>break;</code>"
+                        },
+                        {
+                            "question": "Was macht <code>continue</code>?",
+                            "answer": "Springt zum nächsten Schleifendurchlauf"
+                        },
+                        {
+                            "question": "Schreibe eine Schleife für alle geraden Zahlen bis 100.",
+                            "answer": "for (int i = 2; i <= 100; i += 2)"
+                        },
+                        {
+                            "question": "Warum ist <code>if (x = 5)</code> gefährlich?",
+                            "answer": "Weil es eine Zuweisung statt eines Vergleichs durchführt und somit immer true ergibt."
+                        },
+                        {
+                            "question": "Wie erstellt man eine Endlosschleife mit <code>for</code>?",
+                            "answer": "for (;;) { ... }"
+                        },
+                        {
+                            "question": "Was gibt folgender Code aus?\n<pre>for (int i=0; i<3; i++) { \n    printf(\"%d \", i); \n    i++; \n}</pre>",
+                            "answer": "0 2 (i wird in jedem Schritt doppelt erhöht)"
+                        },
+                        {
+                            "question": "Wie prüft man mit <code>switch</code> auf Vokale?",
+                            "answer": "Beispiel:\n<pre>switch (c) {\n    case 'a': case 'e': case 'i': case 'o': case 'u':\n        // Code\n        break;\n}</pre>"
+                        },
+                        {
+                            "question": "Wie summiert man ein Array mit einer <code>while</code>-Schleife?",
+                            "answer": "int i = 0, sum = 0;\nwhile (i < size) sum += arr[i++];"
+                        },
+                        {
+                            "question": "Warum ist <code>for (int i=0.5; ...)</code> schlecht?",
+                            "answer": "Wegen impliziter Konvertierung; <code>i</code> startet bei 0"
+                        },
+                        {
+                            "question": "Wie bricht man verschachtelte Schleifen ab?",
+                            "answer": "Mit einer Flag-Variable oder, seltener, mit <code>goto</code>"
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen <code>i++</code> und <code>++i</code> in Schleifen?",
+                            "answer": "Kein Unterschied, wenn der Rückgabewert nicht im Schleifenrumpf verwendet wird."
+                        },
+                        {
+                            "question": "Wie findet man den kleinsten Wert in einem Array?",
+                            "answer": "Beispiel:\n<pre>int min = arr[0];\nfor (int i = 1; i < size; i++) {\n    if (arr[i] < min) min = arr[i];\n}</pre>"
+                        },
+                        {
+                            "question": "Warum sollte man Fließkommazahlen nicht in Schleifenbedingungen verwenden?",
+                            "answer": "Aufgrund von Rundungsfehlern, die zu Endlosschleifen führen können."
+                        },
+                        {
+                            "question": "Wie implementiert man eine <code>foreach</code>-Schleife in C?",
+                            "answer": "Direkt gibt es keine, man verwendet stattdessen eine Schleife mit Index oder Pointer."
+                        },
+                        {
+                            "question": "Was ist ein \"Off-by-One\"-Fehler?",
+                            "answer": "Ein Fehler, bei dem eine Schleife eine Iteration zu viel oder zu wenig durchläuft (z.B. <code>i <= size</code> statt <code>i < size</code>)."
+                        },
+                        {
+                            "question": "Wie prüft man auf Primzahlen mit einer Schleife?",
+                            "answer": "Beispiel:\n<pre>int is_prime(int n) {\n    for (int i = 2; i * i <= n; i++) {\n        if (n % i == 0) return 0;\n    }\n    return n > 1;\n}</pre>"
+                        },
+                        {
+                            "question": "Wie iteriert man rückwärts durch ein Array?",
+                            "answer": "for (int i = size - 1; i >= 0; i--)"
+                        },
+                        {
+                            "question": "Warum kann <code>while(*s++ = *t++);</code> gefährlich sein?",
+                            "answer": "Weil es ohne Pufferprüfung kopiert und somit zu Überläufen führen kann."
+                        },
+                        {
+                            "question": "Wie optimiert man Schleifen (Loop Unrolling)?",
+                            "answer": "Beispiel:\n<pre>for (i = 0; i < 100; i += 4) {\n    // 4 Operationen pro Iteration\n}</pre>"
+                        },
+                        {
+                            "question": "Warum ist <code>for (i=0; i < strlen(s); i++)</code> ineffizient?",
+                            "answer": "<code>strlen()</code> wird in jeder Iteration neu berechnet."
+                        },
+                        {
+                            "question": "Wie implementiert man eine verzögerte Schleife?",
+                            "answer": "Nicht portabel; z.B. mit Busy-Wait: <pre>for (volatile int i = 0; i < 1e6; i++);</pre>"
+                        },
+                        {
+                            "question": "Was ist \"Loop Invariant Code Motion\"?",
+                            "answer": "Eine Compiler-Optimierung, bei der Code, der in der Schleife unverändert bleibt, außerhalb der Schleife platziert wird."
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "7. Pointer (25 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Wie deklariert man einen Pointer auf einen <code>int</code>?",
+                            "answer": "int *p;"
+                        },
+                        {
+                            "question": "Wie weist man einem Pointer die Adresse einer Variable zu?",
+                            "answer": "int x = 5; int *p = &x;"
+                        },
+                        {
+                            "question": "Wie liest man den Wert über einen Pointer?",
+                            "answer": "int value = *p; (Dereferenzierung)"
+                        },
+                        {
+                            "question": "Was ist ein Nullpointer?",
+                            "answer": "Ein Pointer, der auf <code>NULL</code> zeigt (Adresse 0)"
+                        },
+                        {
+                            "question": "Warum führt <code>int *p; *p = 5;</code> zu einem Absturz?",
+                            "answer": "Weil <code>p</code> auf keine gültige Adresse zeigt (undefiniertes Verhalten)"
+                        },
+                        {
+                            "question": "Wie vergleicht man zwei Pointer?",
+                            "answer": "Beispiel: <code>if (p1 == p2) { ... }</code>"
+                        },
+                        {
+                            "question": "Was bedeutet <code>void*</code>?",
+                            "answer": "Ein generischer Pointer, der auf jeden Datentyp zeigen kann"
+                        },
+                        {
+                            "question": "Wie inkrementiert man einen Pointer?",
+                            "answer": "Durch <code>p++;</code> (springt um <code>sizeof(Typ)</code> Bytes)"
+                        },
+                        {
+                            "question": "Wie greift man auf das 3. Element eines Arrays via Pointer zu?",
+                            "answer": "Entweder <code>*(arr + 2)</code> oder <code>arr[2]</code>"
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen <code>int* p, q;</code> und <code>int *p, *q;</code>?",
+                            "answer": "Ersteres: <code>p</code> ist ein Pointer, <code>q</code> ist ein int; Zweiteres: Beide sind Pointer"
+                        },
+                        {
+                            "question": "Wie erstellt man ein dynamisches Array von 10 <code>int</code>?",
+                            "answer": "int *arr = malloc(10 * sizeof(int));"
+                        },
+                        {
+                            "question": "Was ist ein Dangling Pointer?",
+                            "answer": "Ein Pointer, der auf freigegebenen Speicher zeigt"
+                        },
+                        {
+                            "question": "Wie übergibt man einen Pointer an eine Funktion?",
+                            "answer": "Beispiel: <pre>void func(int *p) { ... }\nfunc(&x);</pre>"
+                        },
+                        {
+                            "question": "Was macht <code>const int *p</code>?",
+                            "answer": "Ein Pointer auf konstante Daten; <code>*p</code> kann nicht geändert werden"
+                        },
+                        {
+                            "question": "Wie iteriert man durch ein <code>char</code>-Array mit Pointern?",
+                            "answer": "Beispiel: <pre>char *p = str;\nwhile (*p != '\\0') { p++; }</pre>"
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen <code>arr[i]</code> und <code>*(arr + i)</code>?",
+                            "answer": "Beides ist äquivalent"
+                        },
+                        {
+                            "question": "Wie erstellt man einen Pointer auf eine Funktion?",
+                            "answer": "Beispiel: <code>int (*funcPtr)(int, int) = &addFunction;</code>"
+                        },
+                        {
+                            "question": "Warum ist <code>void**</code> gefährlich?",
+                            "answer": "Weil es Typumwandlungsfehler zulassen kann (keine strenge Typprüfung)"
+                        },
+                        {
+                            "question": "Was ist ein Pointer auf einen Pointer?",
+                            "answer": "Beispiel: <code>int **pp = &p;</code> (z.B. für 2D-Arrays)"
+                        },
+                        {
+                            "question": "Wie kopiert man einen String mit Pointern?",
+                            "answer": "Beispiel: <code>while (*dest++ = *src++);</code>"
+                        },
+                        {
+                            "question": "Was ist Pointer Aliasing?",
+                            "answer": "Wenn mehrere Pointer auf denselben Speicherbereich zeigen, was zu Optimierungsproblemen führen kann"
+                        },
+                        {
+                            "question": "Wie funktioniert <code>restrict</code> in C99?",
+                            "answer": "Es ist ein Hinweis für den Compiler, dass kein Pointer-Aliasing vorliegt (in C98 nicht verfügbar)"
+                        },
+                        {
+                            "question": "Warum ist <code>((struct MyStruct*)p)->field</code> riskant?",
+                            "answer": "Weil es zu falscher Ausrichtung oder Interpretation des Speichers führen kann (undefiniertes Verhalten)"
+                        },
+                        {
+                            "question": "Wie implementiert man eine generische Linked List?",
+                            "answer": "Beispiel:\n<pre>struct Node {\n    void *data;\n    struct Node *next;\n};</pre>"
+                        },
+                        {
+                            "question": "Was ist Pointer Arithmetic auf <code>void*</code>?",
+                            "answer": "In C98 nicht erlaubt; erfordert Compiler-Erweiterungen"
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "8. Arrays (25 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Wie deklariert man ein Array mit 10 <code>int</code>-Elementen?",
+                            "answer": "int arr[10];"
+                        },
+                        {
+                            "question": "Wie greift man auf das 5. Element eines Arrays zu?",
+                            "answer": "Mit <code>arr[4]</code> (da der Index bei 0 beginnt)"
+                        },
+                        {
+                            "question": "Warum ist <code>int arr[] = {1, 2, 3};</code> gültig?",
+                            "answer": "Die Größe wird implizit auf 3 gesetzt."
+                        },
+                        {
+                            "question": "Was passiert bei <code>arr[10]</code> in einem Array der Größe 5?",
+                            "answer": "Undefiniertes Verhalten (Buffer Overflow)"
+                        },
+                        {
+                            "question": "Wie initialisiert man alle Elemente eines Arrays mit 0?",
+                            "answer": "int arr[5] = {0};"
+                        },
+                        {
+                            "question": "Schreibe Code, der die Summe eines Arrays berechnet.",
+                            "answer": "Beispiel:\n<pre>int sum = 0;\nfor (int i = 0; i < size; i++) {\n    sum += arr[i];\n}</pre>"
+                        },
+                        {
+                            "question": "Warum kann man Arrays nicht mit <code>==</code> vergleichen?",
+                            "answer": "Weil der Vergleich die Adressen und nicht die Inhalte prüft; stattdessen Schleife oder <code>memcmp</code> verwenden."
+                        },
+                        {
+                            "question": "Wie übergibt man ein Array an eine Funktion?",
+                            "answer": "Beispiel: <code>void func(int arr[], int size)</code> oder <code>void func(int *arr, int size)</code>"
+                        },
+                        {
+                            "question": "Unterschied zwischen <code>char str[] = \"hello\"</code> und <code>char *str = \"hello\"</code>?",
+                            "answer": "Erstes: modifizierbares Array im Stack; Zweites: Zeiger auf ein read-only String-Literal."
+                        },
+                        {
+                            "question": "Wie deklariert man ein 2D-Array mit 3 Zeilen und 4 Spalten?",
+                            "answer": "int arr[3][4];"
+                        },
+                        {
+                            "question": "Wie allokiert man ein dynamisches Array?",
+                            "answer": "Beispiel: <code>int *arr = malloc(10 * sizeof(int));</code>"
+                        },
+                        {
+                            "question": "Was ist \"Array Decay\"?",
+                            "answer": "Wenn ein Array als Pointer auf sein erstes Element übergeben wird."
+                        },
+                        {
+                            "question": "Wie sind Elemente in einem 2D-Array im Speicher angeordnet?",
+                            "answer": "In Row-Major Order: Zeile für Zeile, z.B. <code>arr[0][0], arr[0][1], ..., arr[1][0], ...</code>"
+                        },
+                        {
+                            "question": "Wie bestimmt man die Größe eines Arrays mit <code>sizeof</code>?",
+                            "answer": "Beispiel: <code>int size = sizeof(arr) / sizeof(arr[0]);</code>"
+                        },
+                        {
+                            "question": "Warum gibt <code>sizeof(arr)</code> in einer Funktion nicht die Arraygröße zurück?",
+                            "answer": "Weil Arrays zu Pointern decayen, sodass <code>sizeof</code> die Größe des Pointers liefert."
+                        },
+                        {
+                            "question": "Wie deklariert man ein Array von Zeigern?",
+                            "answer": "Beispiel: <code>int *arr[10];</code> (10 Zeiger auf int)"
+                        },
+                        {
+                            "question": "Kann eine Funktion ein Array zurückgeben?",
+                            "answer": "Nein, aber sie kann einen Pointer auf dynamisch allokierten Speicher zurückgeben."
+                        },
+                        {
+                            "question": "Was sind \"Variable-Length Arrays\" (VLA)?",
+                            "answer": "Arrays, deren Größe zur Laufzeit bestimmt wird (C99+; in C98 nicht standardkonform)"
+                        },
+                        {
+                            "question": "Wie kopiert man einen String ohne <code>strcpy</code>?",
+                            "answer": "Beispiel:\n<pre>for (int i = 0; (dest[i] = src[i]) != '\\0'; i++);\n</pre>"
+                        },
+                        {
+                            "question": "Warum prüft C nicht auf Array-Grenzen?",
+                            "answer": "Aus Performancegründen; der Programmierer ist für die Einhaltung verantwortlich."
+                        },
+                        {
+                            "question": "Wie greift man mit Pointern auf 2D-Array-Elemente zu?",
+                            "answer": "Beispiel: <code>*(*(arr + i) + j)</code>"
+                        },
+                        {
+                            "question": "Wie initialisiert man ein Array mit Werten?",
+                            "answer": "Beispiel: <code>int arr[] = {1, 2, 3, 4, 5};</code>"
+                        },
+                        {
+                            "question": "Was passiert, wenn man einen Array-Index negativ verwendet?",
+                            "answer": "Undefiniertes Verhalten, da auf ungültigen Speicher zugegriffen wird."
+                        },
+                        {
+                            "question": "Wie iteriert man über ein Array mit einem Zeiger?",
+                            "answer": "Beispiel:\n<pre>for (int *p = arr; p < arr + size; p++) { ... }</pre>"
+                        },
+                        {
+                            "question": "Wie erstellt man ein Array von Strings?",
+                            "answer": "Beispiel: <code>char *arr[] = {\"hello\", \"world\"};</code>"
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "9. Funktionen / Parameter / Rückgabe (25 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Was ist eine Funktion in C und warum ist sie nützlich?",
+                            "answer": "Funktionen ermöglichen die Modularisierung und Wiederverwendbarkeit von Code."
+                        },
+                        {
+                            "question": "Wie definiert und deklariert man eine Funktion in C? Erkläre den Unterschied zwischen Prototyp und Definition.",
+                            "answer": "Der Prototyp informiert den Compiler über die Funktionssignatur, während die Definition den kompletten Funktionskörper enthält."
+                        },
+                        {
+                            "question": "Wie werden Parameter an Funktionen übergeben?",
+                            "answer": "Standardmäßig werden Parameter per call-by-value, also als Kopie des übergebenen Wertes, übergeben."
+                        },
+                        {
+                            "question": "Was versteht man unter dem Rückgabewert einer Funktion?",
+                            "answer": "Der Rückgabewert ist das Ergebnis, das eine Funktion mittels <code>return</code> zurückliefert."
+                        },
+                        {
+                            "question": "Schreibe eine Funktion, die zwei <code>int</code>-Werte addiert und das Ergebnis zurückgibt.",
+                            "answer": "Beispiel:\n<pre>int add(int a, int b) {\n    return a + b;\n}\n</pre>"
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen void-Funktionen und Funktionen mit Rückgabewert?",
+                            "answer": "Void-Funktionen liefern keinen Wert zurück, während Funktionen mit Rückgabewert ein Ergebnis liefern."
+                        },
+                        {
+                            "question": "Wie können Funktionen rekursiv aufgerufen werden? Gib ein Beispiel.",
+                            "answer": "Eine Funktion ruft sich selbst auf, z. B. eine Fakultätsfunktion: <code>n * fakultaet(n-1)</code> mit einer Abbruchbedingung."
+                        },
+                        {
+                            "question": "Wie wirken sich Parameter auf den Programmfluss aus?",
+                            "answer": "Parameter liefern die Eingabewerte, mit denen eine Funktion arbeitet, und beeinflussen somit das Verhalten der Funktion."
+                        },
+                        {
+                            "question": "Warum sind Funktionsprototypen wichtig?",
+                            "answer": "Sie ermöglichen dem Compiler, Funktionsaufrufe zu überprüfen, bevor die Funktion definiert wird."
+                        },
+                        {
+                            "question": "Wie kann man eine Funktion in mehrere Dateien aufteilen?",
+                            "answer": "Durch die Deklaration des Funktionsprototyps in einem Header-File und die Definition in einer separaten Quellcode-Datei."
+                        },
+                        {
+                            "question": "Wie übergibt man ein Array an eine Funktion?",
+                            "answer": "Arrays werden als Pointer übergeben, z. B. <code>void func(int arr[], int size)</code>."
+                        },
+                        {
+                            "question": "Wie übergibt man einen String an eine Funktion?",
+                            "answer": "Ein String wird als <code>char*</code> übergeben, z. B. <code>void printString(char *str)</code>."
+                        },
+                        {
+                            "question": "Was passiert, wenn eine Funktion keinen Rückgabewert hat, dieser aber verwendet wird?",
+                            "answer": "Das Verhalten ist undefiniert und kann zu Fehlern im Programm führen."
+                        },
+                        {
+                            "question": "Wie definiert man eine Funktion, die keine Parameter hat?",
+                            "answer": "Beispiel: <code>int func(void) { ... }</code>"
+                        },
+                        {
+                            "question": "Wie kann man mehrere Rückgabewerte aus einer Funktion erhalten?",
+                            "answer": "Durch Übergabe von Zeigern als Parameter oder durch die Rückgabe einer Struktur, die mehrere Werte enthält."
+                        },
+                        {
+                            "question": "Wie implementiert man eine Funktion, die einen Fehlercode zurückgibt?",
+                            "answer": "Die Funktion gibt z. B. <code>0</code> bei Erfolg und einen von null verschiedenen Wert bei einem Fehler zurück."
+                        },
+                        {
+                            "question": "Was ist eine inline-Funktion und wann wird sie verwendet?",
+                            "answer": "Eine inline-Funktion wird vom Compiler an der Aufrufstelle ersetzt, um den Funktionsaufruf-Overhead zu vermeiden."
+                        },
+                        {
+                            "question": "Wie verändert sich der Scope von Parametern innerhalb einer Funktion?",
+                            "answer": "Parameter haben einen lokalen Scope, der nur innerhalb der Funktion gültig ist."
+                        },
+                        {
+                            "question": "Kann man in C Funktionen als Argumente übergeben?",
+                            "answer": "Ja, mittels Funktionszeigern können Funktionen als Parameter übergeben werden."
+                        },
+                        {
+                            "question": "Wie ruft man eine Funktion über ihren Funktionszeiger auf?",
+                            "answer": "Durch Dereferenzierung des Zeigers, z. B. <code>(*funcPtr)(args)</code>."
+                        },
+                        {
+                            "question": "Wie definiert man einen Funktionszeiger für eine Funktion, die <code>int</code> zurückgibt und zwei <code>int</code>-Parameter hat?",
+                            "answer": "Beispiel: <code>int (*funcPtr)(int, int);</code>"
+                        },
+                        {
+                            "question": "Wie unterscheiden sich deklarierte Funktionen von definierten Funktionen?",
+                            "answer": "Die Deklaration gibt nur die Signatur der Funktion an, die Definition enthält den tatsächlichen Code."
+                        },
+                        {
+                            "question": "Warum ist es wichtig, den Rückgabetyp einer Funktion korrekt zu deklarieren?",
+                            "answer": "Ein korrekter Rückgabetyp ermöglicht dem Compiler, die richtige Speichergröße zu reservieren und Typprüfungen durchzuführen."
+                        },
+                        {
+                            "question": "Wie wird die Lebensdauer von Variablen, die innerhalb einer Funktion deklariert werden, bestimmt?",
+                            "answer": "Solche Variablen existieren nur während des Funktionsaufrufs und werden danach zerstört."
+                        },
+                        {
+                            "question": "Was passiert, wenn eine Funktion nicht deklariert wird, bevor sie aufgerufen wird?",
+                            "answer": "Der Compiler nimmt oft einen Standardrückgabewert <code>int</code> an, was zu unvorhergesehenem Verhalten führen kann."
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "10. call-by-value / call-by-reference (25 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Was bedeutet call-by-value in C?",
+                            "answer": "Es werden Kopien der Argumentwerte an die Funktion übergeben."
+                        },
+                        {
+                            "question": "Wie realisiert man call-by-reference in C?",
+                            "answer": "Durch die Übergabe der Adresse einer Variablen mittels Pointer."
+                        },
+                        {
+                            "question": "Warum verwendet C standardmäßig call-by-value?",
+                            "answer": "Um unbeabsichtigte Änderungen an den Originaldaten zu vermeiden."
+                        },
+                        {
+                            "question": "Schreibe einen Codeausschnitt, der zeigt, dass call-by-value Änderungen nicht außerhalb sichtbar sind.",
+                            "answer": "Beispiel:\n<pre>void modify(int val) {\n    val = 100;\n}\n\nint main(void) {\n    int num = 50;\n    modify(num);\n    printf(\"%d\", num); // Gibt 50 aus\n    return 0;\n}\n</pre>"
+                        },
+                        {
+                            "question": "Wie simuliert man call-by-reference in C?",
+                            "answer": "Indem man die Adresse der Variable übergibt, z. B. <code>modify(&amp;num);</code>"
+                        },
+                        {
+                            "question": "Was passiert, wenn man einen falsch initialisierten Pointer an eine Funktion übergibt?",
+                            "answer": "Das führt zu undefiniertem Verhalten und kann zu Programmabstürzen führen."
+                        },
+                        {
+                            "question": "Wie unterscheiden sich call-by-value und call-by-reference bei großen Datenstrukturen?",
+                            "answer": "Call-by-reference vermeidet das Kopieren großer Datenmengen, da nur die Adresse übergeben wird."
+                        },
+                        {
+                            "question": "Warum ist es wichtig, die Gültigkeit eines Pointers vor der Dereferenzierung zu überprüfen?",
+                            "answer": "Um Abstürze durch den Zugriff auf ungültigen Speicher zu vermeiden."
+                        },
+                        {
+                            "question": "Wie übergibt man mehrere Werte durch call-by-reference?",
+                            "answer": "Durch Übergabe mehrerer Pointer als Funktionsparameter."
+                        },
+                        {
+                            "question": "Kann man call-by-reference auch mit Arrays verwenden?",
+                            "answer": "Ja, da Arrays als Pointer übergeben werden."
+                        },
+                        {
+                            "question": "Wie wird der Rückgabewert einer Funktion interpretiert, wenn call-by-value verwendet wird?",
+                            "answer": "Es wird eine Kopie des berechneten Wertes zurückgegeben."
+                        },
+                        {
+                            "question": "Wie kann man den Unterschied zwischen call-by-value und call-by-reference testen?",
+                            "answer": "Durch Vergleich der Werte vor und nach dem Funktionsaufruf."
+                        },
+                        {
+                            "question": "Nenne ein Beispiel aus der Standardbibliothek, das call-by-reference verwendet.",
+                            "answer": "Funktionen wie <code>qsort</code> verwenden Zeiger, um Daten direkt zu modifizieren."
+                        },
+                        {
+                            "question": "Wie kann man den Speicherverbrauch bei call-by-reference optimieren?",
+                            "answer": "Indem man unnötige Kopien vermeidet und nur die Adresse der Daten übergibt."
+                        },
+                        {
+                            "question": "Was passiert, wenn man versucht, eine Konstante per call-by-reference zu ändern?",
+                            "answer": "Der Compiler gibt einen Fehler, da const-Variablen nicht verändert werden dürfen."
+                        },
+                        {
+                            "question": "Wie definiert man eine Funktion, die einen Pointer als Parameter akzeptiert?",
+                            "answer": "Beispiel: <code>int func(int *ptr) { ... }</code>"
+                        },
+                        {
+                            "question": "Warum sind Funktionsaufrufe per call-by-reference oft schneller als per call-by-value?",
+                            "answer": "Weil nur die Adresse übergeben wird, nicht der komplette Datensatz."
+                        },
+                        {
+                            "question": "Kann eine Funktion gleichzeitig call-by-value und call-by-reference verwenden?",
+                            "answer": "Ja, indem sie sowohl Wertparameter als auch Zeigerparameter definiert."
+                        },
+                        {
+                            "question": "Wie erkennt man anhand der Funktionsdeklaration, ob call-by-reference verwendet wird?",
+                            "answer": "Wenn die Parameter als Pointer deklariert sind, wird call-by-reference verwendet."
+                        },
+                        {
+                            "question": "Wie verändert sich die Speicheradresse eines Parameters bei call-by-reference?",
+                            "answer": "Die Adresse bleibt gleich, da der Pointer direkt auf die Originalvariable zeigt."
+                        },
+                        {
+                            "question": "Nenne ein typisches Anwendungsbeispiel für call-by-reference in der Datenmanipulation.",
+                            "answer": "Sortieralgorithmen, bei denen die Originaldaten direkt verändert werden."
+                        },
+                        {
+                            "question": "Wie geht man in einer Funktion mit einem übergebenen NULL-Pointer um?",
+                            "answer": "Durch Überprüfung, z. B. <code>if (ptr == NULL) return error;</code>"
+                        },
+                        {
+                            "question": "Warum ist const-Korrektheit bei call-by-reference wichtig?",
+                            "answer": "Um zu verhindern, dass Funktionen versehentlich die übergebenen Daten ändern."
+                        },
+                        {
+                            "question": "Welche Vorteile bietet call-by-reference bei komplexen Strukturen?",
+                            "answer": "Geringerer Speicherbedarf und höhere Effizienz, da keine vollständigen Kopien erstellt werden müssen."
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "11. Dynamische Speicherverwaltung (25 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Was ist dynamische Speicherverwaltung in C und warum ist sie wichtig?",
+                            "answer": "Sie ermöglicht die Reservierung von Speicher zur Laufzeit, wenn die benötigte Größe zur Kompilierzeit nicht bekannt ist."
+                        },
+                        {
+                            "question": "Wie verwendet man <code>malloc()</code> zur Reservierung von Speicher?",
+                            "answer": "Syntax: <code>ptr = (cast_type*) malloc(number_of_elements * sizeof(datatype));</code>"
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen <code>malloc()</code> und <code>calloc()</code>?",
+                            "answer": "<code>malloc()</code> reserviert uninitialisierten Speicher, während <code>calloc()</code> den Speicher mit Nullen initialisiert."
+                        },
+                        {
+                            "question": "Warum ist es wichtig, Speicher mit <code>free()</code> wieder freizugeben?",
+                            "answer": "Um Speicherlecks zu vermeiden."
+                        },
+                        {
+                            "question": "Schreibe einen Codeausschnitt, der dynamisch ein Array von 10 <code>int</code> allokiert und wieder freigibt.",
+                            "answer": "Beispiel:\n<pre>int *arr = (int*) malloc(10 * sizeof(int));\nif (arr == NULL) {\n    // Fehlerbehandlung\n    return 1;\n}\n// Nutzung des Arrays\nfree(arr);\n</pre>"
+                        },
+                        {
+                            "question": "Was passiert, wenn <code>malloc()</code> keinen Speicher mehr reservieren kann?",
+                            "answer": "Es wird <code>NULL</code> zurückgegeben."
+                        },
+                        {
+                            "question": "Wie können Speicherlecks vermieden werden?",
+                            "answer": "Indem jeder allokierte Speicherblock mit <code>free()</code> wieder freigegeben wird."
+                        },
+                        {
+                            "question": "Wie funktioniert <code>realloc()</code> und wann wird es eingesetzt?",
+                            "answer": "Es passt die Größe eines bereits allokierten Speicherblocks an, z. B. zur Erweiterung eines Arrays."
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen statischem und dynamischem Speicher?",
+                            "answer": "Statischer Speicher wird zur Kompilierzeit zugewiesen, dynamischer zur Laufzeit."
+                        },
+                        {
+                            "question": "Wie überprüft man, ob <code>malloc()</code> erfolgreich war?",
+                            "answer": "Indem man prüft, ob der zurückgegebene Pointer <code>NULL</code> ist."
+                        },
+                        {
+                            "question": "Warum sollte man nach <code>free()</code> den Pointer auf <code>NULL</code> setzen?",
+                            "answer": "Um Dangling Pointer zu vermeiden."
+                        },
+                        {
+                            "question": "Wie berechnet man den benötigten Speicher für ein Array von 50 <code>double</code>s?",
+                            "answer": "Mit <code>50 * sizeof(double)</code>."
+                        },
+                        {
+                            "question": "Was passiert, wenn <code>free()</code> mehrmals auf denselben Pointer aufgerufen wird?",
+                            "answer": "Das führt zu undefiniertem Verhalten (doppelte Freigabe)."
+                        },
+                        {
+                            "question": "Wie kann man dynamisch Speicher für eine 2D-Array-Struktur allokieren?",
+                            "answer": "Durch Allokierung eines Arrays von Pointern und anschließend für jede Zeile separat mit <code>malloc()</code>."
+                        },
+                        {
+                            "question": "Warum ist es wichtig, dynamisch allokierten Speicher immer freizugeben?",
+                            "answer": "Um Speicherlecks zu verhindern."
+                        },
+                        {
+                            "question": "Wie wird der Speicher von globalen Variablen im Vergleich zu dynamischem Speicher verwaltet?",
+                            "answer": "Globale Variablen werden beim Programmstart zugewiesen und beim Programmende freigegeben; dynamischer Speicher muss manuell verwaltet werden."
+                        },
+                        {
+                            "question": "Kann <code>realloc()</code> die Adresse des Speicherblocks ändern?",
+                            "answer": "Ja, wenn der vorhandene Block nicht erweitert werden kann, kann <code>realloc()</code> einen neuen Speicherblock zurückgeben."
+                        },
+                        {
+                            "question": "Wie sichert man sich gegen Buffer Overflows beim Umgang mit dynamischem Speicher?",
+                            "answer": "Durch sorgfältige Berechnung der benötigten Speichergröße und Prüfung der Rückgabewerte von Allokationsfunktionen."
+                        },
+                        {
+                            "question": "Nenne ein typisches Anwendungsbeispiel für dynamische Speicherverwaltung.",
+                            "answer": "Datenstrukturen wie Listen, Bäume oder Graphen, deren Größe zur Laufzeit variiert."
+                        },
+                        {
+                            "question": "Wie unterscheidet sich <code>calloc()</code> in der Initialisierung von <code>malloc()</code>?",
+                            "answer": "<code>calloc()</code> initialisiert den reservierten Speicher mit Nullen, <code>malloc()</code> nicht."
+                        },
+                        {
+                            "question": "Wie allokiert man dynamisch Speicher für eine Struktur?",
+                            "answer": "Mit <code>malloc(sizeof(StructType))</code>."
+                        },
+                        {
+                            "question": "Warum ist es sinnvoll, Speicherallokationen zu überprüfen?",
+                            "answer": "Um sicherzustellen, dass der benötigte Speicher erfolgreich reserviert wurde und nicht mit einem NULL-Pointer gearbeitet wird."
+                        },
+                        {
+                            "question": "Was sind die Folgen, wenn dynamischer Speicher nicht korrekt verwaltet wird?",
+                            "answer": "Speicherlecks, Dangling Pointer und potenzielle Programmabstürze."
+                        }
+                    ]
+                },
+                {
+                    "areaTitle": "12. Strukturen (25 Fragen)",
+                    "questions": [
+                        {
+                            "question": "Was ist eine Struktur in C und warum wird sie verwendet?",
+                            "answer": "Eine Struktur fasst verschiedene Datentypen unter einem gemeinsamen Namen zusammen, um zusammengehörige Daten logisch zu gruppieren."
+                        },
+                        {
+                            "question": "Wie definiert man eine Struktur in C?",
+                            "answer": "Mit dem Schlüsselwort <code>struct</code>, z. B. <code>struct Person { char name[50]; int age; };</code>"
+                        },
+                        {
+                            "question": "Wie deklariert man eine Strukturvariable und greift auf deren Mitglieder zu?",
+                            "answer": "Entweder direkt mit <code>struct Person p;</code> oder mittels <code>typedef</code>; Zugriff erfolgt über den Punktoperator, z. B. <code>p.age</code>."
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen Strukturen und Arrays?",
+                            "answer": "Arrays speichern Elemente desselben Typs, während Strukturen verschiedene Datentypen in einer Einheit bündeln."
+                        },
+                        {
+                            "question": "Schreibe einen Codeausschnitt, der eine Struktur zur Speicherung von Personendaten definiert und initialisiert.",
+                            "answer": "#include <stdio.h>\nstruct Person {\n    char name[50];\n    int age;\n};\n\nint main(void) {\n    struct Person p = {\"Alice\", 30};\n    printf(\"Name: %s, Age: %d\\n\", p.name, p.age);\n    return 0;\n}"
+                        },
+                        {
+                            "question": "Was bewirkt der Einsatz von <code>typedef</code> mit Strukturen?",
+                            "answer": "Er ermöglicht es, einen Alias für die Struktur zu definieren, wodurch die Deklaration vereinfacht wird."
+                        },
+                        {
+                            "question": "Wie werden Strukturen als Parameter an Funktionen übergeben?",
+                            "answer": "Standardmäßig per Wert; alternativ kann man einen Pointer auf die Struktur übergeben, um Änderungen zu ermöglichen."
+                        },
+                        {
+                            "question": "Schreibe einen Codeausschnitt, der eine Funktion implementiert, die eine Struktur als Parameter erhält und ein Mitglied ändert.",
+                            "answer": "#include <stdio.h>\n\nstruct Data {\n    int value;\n};\n\nvoid update(struct Data *d) {\n    d->value = 99;\n}\n\nint main(void) {\n    struct Data d = {10};\n    update(&d);\n    printf(\"Updated value: %d\\n\", d.value);\n    return 0;\n}\n"
+                        },
+                        {
+                            "question": "Wie können Strukturen verschachtelt werden?",
+                            "answer": "Eine Struktur kann als Mitglied eine andere Struktur enthalten, um komplexe Datenhierarchien abzubilden."
+                        },
+                        {
+                            "question": "Was muss bei Strukturen bezüglich des Gültigkeitsbereichs beachtet werden?",
+                            "answer": "Lokale Strukturvariablen sind nur innerhalb des Blocks oder der Funktion sichtbar, in der sie deklariert wurden."
+                        },
+                        {
+                            "question": "Schreibe einen Codeausschnitt, der dynamisch Speicher für eine Struktur allokiert und wieder freigibt.",
+                            "answer": "#include <stdio.h>\n#include <stdlib.h>\n\nstruct Data {\n    int value;\n};\n\nint main(void) {\n    struct Data *d = malloc(sizeof(struct Data));\n    if (d == NULL) {\n        return 1;\n    }\n    d->value = 42;\n    printf(\"Value: %d\\n\", d->value);\n    free(d);\n    return 0;\n}\n"
+                        },
+                        {
+                            "question": "Wie kann man die Größe einer Struktur ermitteln?",
+                            "answer": "Mit <code>sizeof(struct StructName)</code>."
+                        },
+                        {
+                            "question": "Was passiert, wenn man versucht, auf ein nicht initialisiertes Strukturelement zuzugreifen?",
+                            "answer": "Das Verhalten ist undefiniert, da der Speicherinhalt zufällig sein kann."
+                        },
+                        {
+                            "question": "Kann eine Funktion eine Struktur zurückgeben?",
+                            "answer": "Ja, Funktionen können Strukturen per Wert zurückgeben."
+                        },
+                        {
+                            "question": "Wie wird eine Struktur in einer anderen Datei verwendet?",
+                            "answer": "Durch Deklaration in einem Header-File und Inkludierung in der entsprechenden Quelldatei."
+                        },
+                        {
+                            "question": "Was sind die Vorteile der Verwendung von Strukturen?",
+                            "answer": "Sie ermöglichen eine klare Organisation und Gruppierung von zusammengehörigen Daten."
+                        },
+                        {
+                            "question": "Wie initialisiert man eine Struktur in C99 mit Designated Initializers?",
+                            "answer": "Beispiel: <code>struct Person p = { .age = 30, .name = \"Alice\" };</code>"
+                        },
+                        {
+                            "question": "Was ist der Unterschied zwischen einer globalen und einer lokalen Strukturvariable?",
+                            "answer": "Globale Strukturen sind im gesamten Programm sichtbar, lokale nur innerhalb der Funktion oder des Blocks, in dem sie deklariert wurden."
+                        },
+                        {
+                            "question": "Wie kann man eine Struktur als <code>const</code> deklarieren?",
+                            "answer": "Beispiel: <code>const struct Person p = {\"Alice\", 30};</code>"
+                        },
+                        {
+                            "question": "Was ist ein Bit-Field in einer Struktur?",
+                            "answer": "Ein Feld, das eine bestimmte Anzahl von Bits innerhalb einer Struktur belegt."
+                        },
+                        {
+                            "question": "Wie definiert man eine Struktur mit flexiblen Arraymitgliedern?",
+                            "answer": "Beispiel: <code>struct Flex { int len; char data[]; };</code>"
+                        },
+                        {
+                            "question": "Kann eine Struktur verschachtelt werden, die sich selbst enthält?",
+                            "answer": "Nein, stattdessen verwendet man einen Pointer, um rekursive Strukturen zu ermöglichen."
+                        },
+                        {
+                            "question": "Wie behandelt der Compiler Padding in Strukturen?",
+                            "answer": "Der Compiler fügt Padding ein, um die Ausrichtung der Mitglieder zu optimieren."
+                        },
+                        {
+                            "question": "Was sind die Nachteile von Strukturen in C?",
+                            "answer": "Erhöhter Speicherverbrauch durch Padding und potenzieller Kopieraufwand bei großen Strukturen."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
